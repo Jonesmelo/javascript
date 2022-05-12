@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font: 12pt Arial
+        }
+
+        form {font: 700;
+            color: blue;
+        }
+
+        button {
+            font-size: 12pt;
+            padding: 20px
+        }
+    </style>
+</head>
+
+<body>
+    <h1>calculadora de Média v1.0</h1>
+    <form>
+        <label for="unidade1">Unidade 1</label>
+        <input type="text" id="n1">
+
+        <label for="unidade2">Unidade 2</label>
+        <input type="text" id="n2">
+
+        <label for="unidade4">Unidade 3</label>
+        <input type="text" id="n3">
+
+        <label for="unidade4">Unidade 4</label>
+        <input type="text" id="n4">
+    </form>
+    <button onclick="media()"> Calcular notas </button>
+
+    <section id="res">
+        <p>Aguardando os dados...</p>
+    </section>
+
+    <script>
+        let nome = window.prompt('Qual o seu nome do aluno?')
+        
+        function media() {
+            let num1 = window.document.getElementById('n1').value;
+            let num2 = window.document.getElementById('n2').value;
+            let num3 = window.document.getElementById('n3').value;
+            let num4 = window.document.getElementById('n4').value;
+            let res = window.document.getElementById("res")
+
+            let med = (Number(num1) + Number(num2) + Number(num3) + Number(num4)) / 4
+
+            res.innerHTML = `<p>Aluno: ${nome.toUpperCase()}</>`
+            res.innerHTML += `<p>A sua média é ${med}</>`
+
+        }
+    </script>
+</body>
+
+</html>
